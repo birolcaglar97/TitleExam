@@ -1,0 +1,82 @@
+[
+  {
+    "keyword": "GirisYapVeyaUyeOl",
+    "locatorType": "css",
+    "locatorValue": "[class='hb2-col3'] [class='icon icon-user']"
+  },
+  {
+    "keyword": "GirisYap",
+    "locatorType": "css",
+    "locatorValue": "[class='btn btn-secondary homeCallLogin secondCallLogin']"
+  },
+  {
+    "keyword": "KullaniciAdi",
+    "locatorType": "id",
+    "locatorValue": "j_username1"
+  },
+  {
+    "keyword": "Sifre",
+    "locatorType": "id",
+    "locatorValue": "j_password"
+  },
+  {
+    "keyword": "LoginDevamEt",
+    "locatorType": "id",
+    "locatorValue": "newLoginStepSecond"
+  },
+  {
+    "keyword": "LoginButton",
+    "locatorType": "id",
+    "locatorValue": "customerLoginButton"
+  },
+  {
+    "keyword": "HoşGeldinizText",
+    "locatorType": "css",
+    "locatorValue": "[class='d'] [class='hum-account']"
+  },
+  {
+    "keyword": "HoşGeldinizText",
+    "locatorType": "css",
+    "locatorValue": "[class='hum-account']"
+  },
+  {
+    "keyword": "HoşGeldinizText",
+    "locatorType": "css",
+    "locatorValue": "[class='hum-account']"
+  },
+  {
+    "keyword": "Hesabim",
+    "locatorType": "css",
+    "locatorValue": "[href='/hesabim/uyelik-bilgilerim']"
+  },
+  {
+    "keyword": "ShadowTest",
+    "locatorType": "css",
+    "locatorValue": "[data-name='Button container'] div"
+  },
+  {
+    "keyword": "ShadowXpath",
+    "locatorType": "xpath",
+    "locatorValue": "//*[text()='Kabul Et']"
+  },
+  {
+    "keyword": "xxxxx",
+    "locatorType": "xxxxx",
+    "locatorValue": "xxxxxxxx"
+  },
+  {
+    "keyword": "xxxxx",
+    "locatorType": "xxxxx",
+    "locatorValue": "xxxxxxxx"
+  },
+  {
+    "keyword": "xxxxx",
+    "locatorType": "xxxxx",
+    "locatorValue": "xxxxxxxx"
+  },
+  {
+    "keyword": "xxxxx",
+    "locatorType": "xxxxx",
+    "locatorValue": "xxxxxxxx"
+  }
+]
