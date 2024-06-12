@@ -25,12 +25,3 @@ Java ve Maven kullanarak oluşturulmuş bir otomasyon projesidir. Selenium, JUni
 
 * Bu readme dosyası sadece temel bilgiler içindir. Daha fazla bilgi için lütfen projeye dahil olan koda bakın.
 * Herhangi bir sorunuz veya sorununuz varsa, [mail](mailto:kazimbirol.caglar@testinium.com?subject=TitleExam%20Hk) atabilirsiniz.
-
-**Versiyonlar:**
-
-* Java: 11
-* Selenium: 4.17.0
-* JUnit 5: 5.10.1
-* Lombok: 1.18.24
-* Log4j: 2.22.0
-* Gson: 2.10.1
