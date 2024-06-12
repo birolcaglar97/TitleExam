@@ -97,9 +97,13 @@ public class Methods {
 
 
     public void waitDisplayed(String keyword) {
-        BrowserManager.getInstance().getWebDriverWait()
-                .until(ExpectedConditions.visibilityOfElementLocated(ElementParser.getInstance().getByWithKeyword(keyword)));
-        logger.info("{} objesi göründü.", keyword);
+        try {
+
+            BrowserManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOfElementLocated(ElementParser.getInstance().getByWithKeyword(keyword)));
+            logger.info("{} objesi göründü.", keyword);
+        } catch (TimeoutException e) {
+            Assertions.fail(keyword + " objesi verilen süre içerisinde bulunamamıştır.");
+        }
     }
 
     public void click(String keyword) {
