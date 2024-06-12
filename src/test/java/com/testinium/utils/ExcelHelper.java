@@ -1,6 +1,5 @@
 package com.testinium.utils;
 
-import com.testinium.page.LoginPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.*;
@@ -15,7 +14,7 @@ import java.util.Objects;
 
 
 public class ExcelHelper {
-    protected static final Logger logger = LogManager.getLogger(LoginPage.class);
+    protected static final Logger logger = LogManager.getLogger(ExcelHelper.class);
     private static final Map<Integer, String> excelData = new HashMap<>();
     private static ExcelHelper instance;
 
@@ -35,7 +34,7 @@ public class ExcelHelper {
         } else if (cell.getCellType() == CellType.NUMERIC) {
             return String.valueOf(cell.getNumericCellValue());
         } else {
-            logger.info("Veri okunama N/A yazılıyor.");
+            logger.info("Veri okunamadi N/A yazılıyor.");
             return "N/A";
         }
     }
@@ -59,10 +58,22 @@ public class ExcelHelper {
         return dataMap;
     }
 
-    public String getValueFromCell(String fileName, int rowIndex, int columnIndex) {
+    /**
+     * Verilen satır ve sütun bilgisi ile veri döner.
+     *
+     * @param filePath    Dosya yolu
+     * @param rowIndex    Satir
+     * @param columnIndex Sütun
+     * @param resources   Dosya resources altında ise true verilir.
+     * @return String cellValue
+     */
+    public String getValueFromCell(String filePath, int rowIndex, int columnIndex, boolean resources) {
         String cellValue = "N/A";
-        try (FileInputStream fis = new FileInputStream(getPathFromResources(fileName));
-             Workbook workbook = new XSSFWorkbook(fis)) {
+        String path = null;
+        if (resources) {
+            path = FileHelper.getPathFromResources(filePath);
+        }
+        try (FileInputStream fis = new FileInputStream(path); Workbook workbook = new XSSFWorkbook(fis)) {
             Sheet sheet = workbook.getSheetAt(0);
             Row row = sheet.getRow(rowIndex);
             if (row != null) {
@@ -75,20 +86,7 @@ public class ExcelHelper {
             e.printStackTrace();
         }
         if (Objects.equals(cellValue, "N/A"))
-            logger.error("Verilen sütün ve satır bilgisi ile excelde veri bulunamamıştır. Sütün ve satır bilgisi 0 dan başlamaktadır. Bu bilgiye dikkat ederek seçim yapınız.");
+            logger.error("Verilen sütun ve satır bilgisi ile excelde veri bulunamamıştır. Sütün ve satır bilgisi 0 dan başlamaktadır. Bu bilgiye dikkat ederek seçim yapınız.");
         return cellValue;
     }
-
-    private String getPathFromResources(String fileName) {
-        String path = "";
-        try {
-            path = Thread.currentThread()
-                    .getContextClassLoader()
-                    .getResource(fileName).toURI().getPath();
-        } catch (Exception e) {
-
-        }
-        return path;
-    }
-
 }

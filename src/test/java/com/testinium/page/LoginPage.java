@@ -2,6 +2,7 @@ package com.testinium.page;
 
 
 import com.testinium.base.BaseTest;
+import com.testinium.test.LoginPageTest;
 import com.testinium.utils.Methods;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Assertions;
 
 
 public class LoginPage extends BaseTest {
-    protected static final Logger logger = LogManager.getLogger(LoginPage.class);
+    protected static final Logger logger = LogManager.getLogger(LoginPageTest.class);
 
     public LoginPage moveToLogin() {
         logger.info("Giriş ekranına gidiliyor.");

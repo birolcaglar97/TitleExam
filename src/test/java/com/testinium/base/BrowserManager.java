@@ -17,7 +17,7 @@ import java.time.Duration;
 
 
 public class BrowserManager {
-    protected static final Logger logger = LogManager.getLogger(Configuration.class);
+    protected static final Logger logger = LogManager.getLogger(BrowserManager.class);
     private static BrowserManager instance;
     private RemoteWebDriver remoteWebDriver;
     private WebDriverWait webDriverWait;

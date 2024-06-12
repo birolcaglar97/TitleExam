@@ -34,7 +34,7 @@ public class Methods {
     public WebElement findElement(String keyword) {
         WebElement element = null;
         try {
-            logger.info("{} objesi bulunuyor.", keyword);
+            logger.info("{} objesi aranıyor.", keyword);
             element = BrowserManager.getInstance().getWebDriverWait()
                     .until(ExpectedConditions.presenceOfElementLocated(ElementParser.getInstance().getByWithKeyword(keyword)));
             logger.info("{} objesi bulundu.", keyword);
@@ -48,7 +48,7 @@ public class Methods {
     public List<WebElement> findElements(String keyword) {
         List<WebElement> elements = new ArrayList<>();
         try {
-            logger.info("{} objesinin elementleri bulunuyor.", keyword);
+            logger.info("{} objesinin elementleri aranıyor.", keyword);
             elements = BrowserManager.getInstance().getWebDriverWait().until(ExpectedConditions.presenceOfAllElementsLocatedBy(ElementParser.getInstance().getByWithKeyword(keyword)));
             logger.info("{} adet element bulunmuştur.", elements.size());
         } catch (TimeoutException e) {
@@ -61,7 +61,7 @@ public class Methods {
         WebElement element = null;
         try {
             By by = ElementParser.getInstance().getByWithKeyword(keyword);
-            logger.info("Shadow Root ile {} objesi bulunuyor.", keyword);
+            logger.info("Shadow Root ile {} objesi aranıyor.", keyword);
             if (by instanceof By.ByXPath) {
                 element = BrowserManager.getInstance().getShadowDriver().findElementByXPath(ElementParser.getInstance().getLocatorValue(keyword));
             } else {
@@ -78,7 +78,7 @@ public class Methods {
         List<WebElement> elements = new ArrayList<>();
         try {
             By by = ElementParser.getInstance().getByWithKeyword(keyword);
-            logger.info("Shadow Root ile {} objesinin elementleri bulunuyor.", keyword);
+            logger.info("Shadow Root ile {} objesinin elementleri aranıyor.", keyword);
             if (by instanceof By.ByXPath) {
                 elements = BrowserManager.getInstance().getShadowDriver().findElementsByXPath(ElementParser.getInstance().getLocatorValue(keyword));
             } else {

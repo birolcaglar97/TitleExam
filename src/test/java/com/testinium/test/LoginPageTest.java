@@ -2,6 +2,7 @@ package com.testinium.test;
 
 import com.testinium.base.BaseTest;
 import com.testinium.page.LoginPage;
+import com.testinium.utils.CsvHelper;
 import com.testinium.utils.ExcelHelper;
 import com.testinium.utils.Methods;
 import io.qameta.allure.Description;
@@ -22,8 +23,8 @@ public class LoginPageTest extends BaseTest {
     @Description("Pozitif login senaryosu")
     public void positiveLoginTest() {
         loginPage.moveToLogin()
-                .enterEmail(ExcelHelper.getInstance().getValueFromCell("test.xlsx", 0, 2))
-                .enterPassword(ExcelHelper.getInstance().getValueFromCell("test.xlsx", 0, 1))
+                .enterEmail(CsvHelper.getInstance().getValueWithRowAndColumn("test.csv", 0, 0,true))
+                .enterPassword(CsvHelper.getInstance().getValueWithRowAndColumn("test.csv", 0, 1,true))
                 .clickLogin()
                 .validateLogin();
     }
@@ -33,7 +34,7 @@ public class LoginPageTest extends BaseTest {
     @Description("Negatif login senaryosu")
     public void negativeLoginTest() {
         loginPage.moveToLogin()
-                .enterEmail(ExcelHelper.getInstance().getValueFromCell("test.xlsx", 0, 1));
+                .enterEmail(ExcelHelper.getInstance().getValueFromCell("test.xlsx", 0, 1,true));
     }
 
 }
