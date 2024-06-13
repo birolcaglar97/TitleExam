@@ -20,7 +20,6 @@ public class HomePage extends BaseTest {
         return this;
     }
     public HomePage searchActivity(){
-        Methods.getInstance().waitSeconds(5);
         Methods.getInstance().click("EtkinlikAraScroll");
         Methods.getInstance().click("EtkinlikAra");
         Methods.getInstance().sendKeys("EtkinlikAra",CsvHelper.getInstance().getValueWithRowAndColumn("test.csv",0,0,true));
@@ -70,9 +69,6 @@ public class HomePage extends BaseTest {
 
     public HomePage addTicketsToBasket() {
         Methods.getInstance().waitSeconds(1);
-        JavascriptExecutor js = (JavascriptExecutor) BrowserManager.getInstance().getWebDriver();
-        String script = "var element = document.getElementsByClassName('element_id'); if (element) { element.remove(); }";
-        js.executeScript(script);
         Methods.getInstance().click("SeciliBiletleriAl");
         return this;
     }
