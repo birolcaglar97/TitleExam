@@ -26,7 +26,7 @@ public class HomePage extends BaseTest {
         Methods.getInstance().waitSeconds(5);
         Methods.getInstance().click("LocationSelect");
         Methods.getInstance().click("LocationSelect");
-        Methods.getInstance().click("AraTest");
+        Methods.getInstance().sendEnter("EtkinlikAra");
         return this;
     }
     public HomePage selectActivity(){
@@ -76,6 +76,7 @@ public class HomePage extends BaseTest {
         Methods.getInstance().sendKeys("UserName", CsvHelper.getInstance().getValueWithRowAndColumn("test.csv",0,1,true));
         Methods.getInstance().click("LoginEmailContinue");
         Methods.getInstance().sendKeys("Password", CsvHelper.getInstance().getValueWithRowAndColumn("test.csv",0,2,true));
+        Methods.getInstance().waitSeconds(1);
         Methods.getInstance().click("LoginPasswordContinue");
         return this;
     }
