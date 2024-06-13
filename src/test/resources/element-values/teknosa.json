@@ -60,23 +60,133 @@
     "locatorValue": "//*[text()='Kabul Et']"
   },
   {
-    "keyword": "xxxxx",
-    "locatorType": "xxxxx",
-    "locatorValue": "xxxxxxxx"
+    "keyword": "AllowAll",
+    "locatorType": "id",
+    "locatorValue": "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll"
   },
   {
-    "keyword": "xxxxx",
-    "locatorType": "xxxxx",
-    "locatorValue": "xxxxxxxx"
+    "keyword": "EtkinlikAraButton",
+    "locatorType": "xpath",
+    "locatorValue": "//*[text()='ARA'][2]"
   },
   {
-    "keyword": "xxxxx",
-    "locatorType": "xxxxx",
-    "locatorValue": "xxxxxxxx"
+    "keyword": "EtkinlikAra",
+    "locatorType": "id",
+    "locatorValue": "search-autocomplete-event-input"
   },
   {
-    "keyword": "xxxxx",
-    "locatorType": "xxxxx",
-    "locatorValue": "xxxxxxxx"
+    "keyword": "EtkinlikAraScroll",
+    "locatorType": "xpath",
+    "locatorValue": "//*[text()='Etkinlik Ara']"
+  },
+  {
+    "keyword": "EtkinlikSec",
+    "locatorType": "xpath",
+    "locatorValue": "(//*[@class='col-md-4 product'])[3]"
+  },
+  {
+    "keyword": "EtkinlikFiyat",
+    "locatorType": "css",
+    "locatorValue": "div[class='event-price']"
+  },
+  {
+    "keyword": "EtkinlikBiletleriGor",
+    "locatorType": "id",
+    "locatorValue": "eventdetail-layoutselection-show"
+  },
+  {
+    "keyword": "EtkinlikBiletFiyatlari",
+    "locatorType": "css",
+    "locatorValue": "[class='price']"
+  },
+  {
+    "keyword": "BiletSecPenceresi",
+    "locatorType": "xpath",
+    "locatorValue": "//*[text()='Bilet Seç']"
+  },
+  {
+    "keyword": "BiletSecSelect",
+    "locatorType": "css",
+    "locatorValue": "[class='currentLayoutSelect']"
+  },
+  {
+    "keyword": "SeciliBiletleriAl",
+    "locatorType": "id",
+    "locatorValue": "salesflow-layoutselection-buy"
+  },
+  {
+    "keyword": "EtkinlikAraBekleme",
+    "locatorType": "xpath",
+    "locatorValue": "(//*[@class='btn btn-block btn-primary searchbar-search-button'])[2]"
+  },
+  {
+    "keyword": "BasketPrice",
+    "locatorType": "css",
+    "locatorValue": "[class='total']"
+  },
+  {
+    "keyword": "UserName",
+    "locatorType": "id",
+    "locatorValue": "account-signinsimple-email"
+  },
+  {
+    "keyword": "Password",
+    "locatorType": "id",
+    "locatorValue": "account-signinemailpassword-password"
+  },
+  {
+    "keyword": "LoginEmailContinue",
+    "locatorType": "id",
+    "locatorValue": "account-signinsimple-continue"
+  },
+  {
+    "keyword": "LoginPasswordContinue",
+    "locatorType": "id",
+    "locatorValue": "account-signinemailpassword-continue"
+  },
+  {
+    "keyword": "PopUp",
+    "locatorType": "css",
+    "locatorValue": "[class='ml-popup-close close-popup']"
+  },
+  {
+    "keyword": "EtkinlikResult",
+    "locatorType": "id",
+    "locatorValue": "search-autocomplete-event-results"
+  },
+  {
+    "keyword": "AraTest",
+    "locatorType": "xpath",
+    "locatorValue": "(//*[@class='btn btn-block btn-primary searchbar-search-button'])[2]"
+  },
+  {
+    "keyword": "LocationSelect",
+    "locatorType": "id",
+    "locatorValue": "search-category-select"
+  },
+  {
+    "keyword": "OdemeyeGec",
+    "locatorType": "id",
+    "locatorValue": "salesflow-questions-continue-button"
+  },
+  {
+    "keyword": "xxxx",
+    "locatorType": "id",
+    "locatorValue": "xxxxx"
+  },
+  {
+    "keyword": "xxxx",
+    "locatorType": "id",
+    "locatorValue": "xxxxx"
+  },
+  {
+    "keyword": "xxxx",
+    "locatorType": "id",
+    "locatorValue": "xxxxx"
+  },
+  {
+    "keyword": "xxxx",
+    "locatorType": "id",
+    "locatorValue": "xxxxx"
   }
 ]

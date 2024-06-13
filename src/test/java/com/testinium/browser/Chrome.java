@@ -67,6 +67,7 @@ public class Chrome {
         options.addArguments("disable-automatic-password-saving");
         options.addArguments("allow-silent-push");
         options.addArguments("disable-infobars");
+        options.addArguments("--remote-allow-origins=*");
         options.setBrowserVersion("LATEST");
         return options;
     }

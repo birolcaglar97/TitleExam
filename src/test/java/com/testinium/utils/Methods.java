@@ -1,15 +1,14 @@
 package com.testinium.utils;
 
+import com.testinium.base.BaseTest;
 import com.testinium.base.BrowserManager;
 import com.testinium.configuration.ElementParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +34,9 @@ public class Methods {
         WebElement element = null;
         try {
             logger.info("{} objesi aranıyor.", keyword);
+            if(isElementVisibleWithoutWait("PopUp")){
+                click("PopUp");
+            }
             element = BrowserManager.getInstance().getWebDriverWait()
                     .until(ExpectedConditions.presenceOfElementLocated(ElementParser.getInstance().getByWithKeyword(keyword)));
             logger.info("{} objesi bulundu.", keyword);
@@ -98,8 +100,8 @@ public class Methods {
 
     public void waitDisplayed(String keyword) {
         try {
-
-            BrowserManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOfElementLocated(ElementParser.getInstance().getByWithKeyword(keyword)));
+            BrowserManager.getInstance().getWebDriverWait()
+                    .until(ExpectedConditions.visibilityOfElementLocated(ElementParser.getInstance().getByWithKeyword(keyword)));
             logger.info("{} objesi göründü.", keyword);
         } catch (TimeoutException e) {
             Assertions.fail(keyword + " objesi verilen süre içerisinde bulunamamıştır.");
@@ -144,6 +146,14 @@ public class Methods {
     public boolean isElementVisible(String keyword) {
         return findElement(keyword).isDisplayed();
     }
+    public boolean isElementVisibleWithoutWait(String keyword){
+        try{
+            BrowserManager.getInstance().getWebDriver().findElement(ElementParser.getInstance().getByWithKeyword(keyword));
+            return true;
+        } catch (Exception e ){
+            return false;
+        }
+    }
 
     public String getText(String keyword) {
         waitDisplayed(keyword);
@@ -155,5 +165,34 @@ public class Methods {
     public boolean compareTextWithContains(String firstText, String secondText) {
         logger.info("Karşılaştırılacak metinler:\n[{}]\n[{}]", firstText, secondText);
         return firstText.contains(secondText);
+    }
+
+    public void sendEnter(String keyword){
+        findElement(keyword).sendKeys(Keys.ENTER);
+    }
+
+    public List<String> getTexts(String keyword) {
+        List<String> texts = new ArrayList<>();
+        findElements(keyword).forEach(f-> texts.add(f.getText()));
+        return texts;
+    }
+
+    public void selectByValue(String keyword,String value){
+        WebElement element = findElement(keyword);
+        Select dropdown = new Select(element);
+        dropdown.selectByValue(value);
+        logger.info("Select {} elementinden {} değeri seçilmiştir.",keyword,value);
+
+    }
+
+    public void waitUntilDisappear(String keyword) {
+        int retry = 0 ;
+        while(isElementVisibleWithoutWait(keyword)){
+            retry++;
+            waitSeconds(1);
+            if(retry > 20 ){
+                Assertions.fail("Sayfa yüklenmesi için 20 saniye boyunca beklendi ve sayfa yüklenmedi.");
+            }
+        }
     }
 }
